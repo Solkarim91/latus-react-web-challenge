@@ -24,10 +24,32 @@ export const IntensityValues: FC<IntensityValuesProps> = ({ intensityValues }) =
     const { forecast, actual, index } = intensityValues;
 
     const items: IntensityValueItemProps[] = [
-        { icon: <TrendingUp color="#01BFFF" size={40} />, value: forecast },
-        { icon: <Eye color="#3BB371" size={40} />, value: actual },
-        { icon: <BarChart2 color={getIntensityIconColour(index)} size={40} />, value: capitalizeString(index) },
+        { 
+            icon: (
+            <div data-testid="TrendingUpIcon">
+                <TrendingUp color="#01BFFF" size={40} />
+            </div>
+            ),
+            value: forecast,
+        },
+        { 
+            icon: (
+            <div data-testid="EyeIcon">
+                <Eye color="#3BB371" size={40} />
+            </div>
+            ),
+            value: actual,
+        },
+        { 
+            icon: (
+            <div data-testid="BarChartIcon">
+                <BarChart2 color={getIntensityIconColour(index)} size={40} />
+            </div>
+            ),
+            value: capitalizeString(index),
+        },
     ];
+
 
     return (
         <div className={styles.intensityValuesContainer}>
