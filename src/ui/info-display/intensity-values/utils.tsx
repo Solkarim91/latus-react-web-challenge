@@ -11,5 +11,7 @@ export const getIntensityIconColour = (index: string) => {
         return "#FF6247";
     } else if (index === "very high") {
         return "#8B0000";
+    } else {
+        return "#01BFFF";
     };
 };
