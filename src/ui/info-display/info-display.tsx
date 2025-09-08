@@ -8,13 +8,12 @@ import { InfoDisplayDataType } from "./types";
 
 type InfoCardProps = {
   data: InfoDisplayDataType;
-  index: number;
-}
+};
 
-export const InfoCard: FC<InfoCardProps> = ({ data, index }) => {
+export const InfoCard: FC<InfoCardProps> = ({ data }) => {
   const { from, to, intensity } = data;
   return (
-    <Card key={index}>
+    <Card>
       <div className={styles.cardContent}>
         <h2>{formatTimeRange(from, to)}</h2>
         <IntensityValues intensityValues={intensity}/>
@@ -29,7 +28,7 @@ export const InfoDisplay = () => {
   return (
     <div className={styles.container}>
         {data.map((item, i) => (
-          <InfoCard data={item} index={i} />
+          <InfoCard data={item} key={i} />
         ))}
     </div>
   );
