@@ -1,13 +1,9 @@
 import React from "react";
-import { Card } from "@/ui/card/card";
+import { InfoDisplay } from "@/ui/info-display/info-display";
 
-export const HomePage: React.FC = () => {
-	return (
-		<div style={{ padding: 16 }}>
-			<h1>Home</h1>
-			<Card>
-				<div>Hello</div>
-			</Card>
-		</div>
-	);
-};
+export const HomePage: React.FC = () => (
+	<div style={{ padding: 16 }}>
+		<h1>Home</h1>
+		<InfoDisplay />
+	</div>
+);
